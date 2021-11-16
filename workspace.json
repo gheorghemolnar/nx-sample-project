@@ -1,0 +1,93 @@
+{
+  "projects": {
+    "backend-landfill": {
+      "projectType": "application",
+      "root": "apps/backend/landfill",
+      "sourceRoot": "apps/backend/landfill/src",
+      "tags": [],
+      "targets": {
+        "buildcust": {
+          "configurations": {
+            "production": {
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend/landfill/src/environments/environment.ts",
+                  "with": "apps/backend/landfill/src/environments/environment.prod.ts"
+                }
+              ],
+              "inspect": false,
+              "optimization": true
+            }
+          },
+          "executor": "@nrwl/node:build",
+          "options": {
+            "assets": [
+              "apps/backend/landfill/src/assets"
+            ],
+            "generatePackageJson": false,
+            "main": "apps/backend/landfill/src/dumb.ts",
+            "outputPath": "dist/apps/backend/landfill",
+            "tsConfig": "apps/backend/landfill/tsconfig.app.json"
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "build": {
+          "configurations": {
+            "production": {
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend/landfill/src/environments/environment.ts",
+                  "with": "apps/backend/landfill/src/environments/environment.prod.ts"
+                }
+              ],
+              "inspect": false,
+              "optimization": true
+            }
+          },
+          "executor": "@nrwl/node:build",
+          "options": {
+            "assets": [
+              "apps/backend/landfill/src/assets"
+            ],
+            "generatePackageJson": true,
+            "main": "apps/backend/landfill/src/main.ts",
+            "outputPath": "dist/apps/backend/landfill",
+            "tsConfig": "apps/backend/landfill/tsconfig.app.json"
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/backend/landfill/**/*.ts"
+            ]
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend-landfill:build"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/backend/landfill/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/apps/backend/landfill"
+          ]
+        }
+      }
+    }
+  },
+  "version": 2
+}

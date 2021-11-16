@@ -1,0 +1,38 @@
+{
+  "affected": {
+    "defaultBase": "master"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/express"
+  },
+  "defaultProject": "backend-landfill",
+  "implicitDependencies": {
+    ".eslintrc.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    }
+  },
+  "npmScope": "myorg",
+  "targetDependencies": {
+    "build": [
+      {
+        "projects": "dependencies",
+        "target": "build"
+      }
+    ]
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
+      },
+      "runner": "@nrwl/workspace/tasks-runners/default"
+    }
+  }
+}
