@@ -29,7 +29,8 @@
           "build",
           "lint",
           "test",
-          "e2e"
+          "e2e",
+          "generate-swagger"
         ]
       },
       "runner": "@nrwl/workspace/tasks-runners/default"
