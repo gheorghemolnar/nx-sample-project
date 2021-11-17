@@ -11,7 +11,7 @@
       "es2017",
       "dom"
     ],
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "paths": {
       // path to the shared libs, that I've exclude
