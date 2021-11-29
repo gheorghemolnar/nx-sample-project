@@ -85,6 +85,15 @@
           "outputs": [
             "coverage/apps/backend/landfill"
           ]
+        },
+        "generate-swagger": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/apps/backend-landfill/swagger.json"
+          ],
+          "options": {
+            "command": "mkdir -p dist/apps/backend-landfill && ts-node --project tsconfig.base.json apps/backend/landfill/src/dumb.ts > dist/apps/backend-landfill/swagger.json"
+          }
         }
       }
     }

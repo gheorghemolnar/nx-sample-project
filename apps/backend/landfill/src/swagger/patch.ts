@@ -1,10 +1,10 @@
 import j2s from 'joi-to-swagger';
 
-import { LandfillEditDtoSchema } from '@myorg/util/types';
+// import { LandfillEditDtoSchema } from '@myorg/util/types';
 
 import { landfillPatch, landfillPatchAuthAdd, landfillPatchAuthRemove } from './data';
 
-const { swagger: updateDto } = j2s(LandfillEditDtoSchema);
+// const { swagger: {} } = j2s(LandfillEditDtoSchema);
 
 import { DEFAULT_HEADERS, PARAMS } from './common';
 
@@ -15,7 +15,7 @@ export const swLandfillPatch = {
   requestBody: {
     content: {
       'application/json': {
-        schema: updateDto,
+        schema: {},
         examples: {
           landfill: {
             summary: 'Landfill patch sample',
@@ -61,7 +61,7 @@ export const swLandfillPatchAuthAdd = {
     requestBody: {
         content: {
           'application/json': {
-            schema: updateDto,
+            schema: {},
             examples: {
               landfill: {
                 summary: 'Landfill patch auth add',
@@ -85,7 +85,7 @@ export const swLandfillPatchAuthRemove = {
     requestBody: {
         content: {
           'application/json': {
-            schema: updateDto,
+            schema: {},
             examples: {
               landfill: {
                 summary: 'Landfill patch auth remove',

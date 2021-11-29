@@ -1,15 +1,15 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 import j2s from 'joi-to-swagger';
 
-import {
-  LandfillCreateDtoSchema,
-  LandfillEditDtoSchema,
-  LandfillRo,
-} from '@myorg/util/types';
+// import {
+//   LandfillCreateDtoSchema,
+//   LandfillEditDtoSchema,
+//   LandfillRo,
+// } from '@myorg/util/types';
 
 import { landfillPost } from './data';
 
-const { swagger: createDto } = j2s(LandfillCreateDtoSchema);
+// const { swagger: createDto } = j2s(LandfillCreateDtoSchema);
 
 import { DEFAULT_HEADERS } from './common';
 
@@ -31,7 +31,7 @@ export const swLandfillPost = {
   requestBody: {
     content: {
       'application/json': {
-        schema: createDto,
+        schema: {},
         examples: {
           landfill: {
             summary: 'Landfill post sample',
